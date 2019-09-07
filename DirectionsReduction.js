@@ -26,6 +26,29 @@ function dirReduc(arr){
     return mainDirection
 }
 
-dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+
 
 //best solutions
+
+function dirReduc(plan) {
+  var opposite = {
+    'NORTH': 'SOUTH', 'EAST': 'WEST', 'SOUTH': 'NORTH', 'WEST': 'EAST'};
+  return plan.reduce(function(dirs, dir){
+      if (dirs[dirs.length - 1] === opposite[dir])
+        dirs.pop();
+      else
+        dirs.push(dir);
+      return dirs;
+    }, []);
+}
+
+// clever solution
+
+function dirReduc(arr) {
+    debugger
+  var str = arr.join(''), pattern = /NORTHSOUTH|EASTWEST|SOUTHNORTH|WESTEAST/;
+  while (pattern.test(str)) str = str.replace(pattern,'');                     //used method test 
+  return str.match(/(NORTH|SOUTH|EAST|WEST)/g)||[];
+}
+
+dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
