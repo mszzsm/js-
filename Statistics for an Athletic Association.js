@@ -39,7 +39,7 @@ if (strg.match(/^[-+]?\d+([Ee][+-]?\d+)?$/i)) { return ''}
                           if (values.length % 2)
                             return values[half];
 
-                          return (values[half - 1] + values[half]) / 2.0;
+                          return (values[half - 1] + values[half]) / 2;
                         }
     let medianValue = median(secondsArray)
    
