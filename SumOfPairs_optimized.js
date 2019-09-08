@@ -1,4 +1,4 @@
-my solution  (to slow )
+//my solution  (to slow )
 var sum_pairs=function(ints, s){
    
   let result = []
